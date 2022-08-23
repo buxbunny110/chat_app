@@ -12,6 +12,14 @@
 
   <body>
     <%= render 'layouts/navigation' %>
+    <% flash.each do |key, message| %>
+    <div class="ui <%= key === 'notice' ? 'positive' : 'negative' %> message">
+      <i class="close icon"></i>
+      <div class="header">
+        <%= message %>
+      </div>
+    </div>
+    <% end %>
     <div class="ui container">
       <%= yield %>
     </div>
