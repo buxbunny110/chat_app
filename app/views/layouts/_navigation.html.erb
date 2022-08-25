@@ -1,21 +1,23 @@
 <div class="ui small menu inverted">
-  <a class="active item">
-    Chatroom
-  </a>
+  <%= link_to "Message me", root_path, class: "active item" %>
   <a class="item">
-    Messages
+    <%= current_user.username unless current_user.nil? %>
   </a>
   <div class="right menu">
     <div class="ui dropdown item">
       Account <i class="dropdown icon"></i>
       <div class="menu">
-        <a class="item">Log in</a>
-        <a class="item">Log out</a>
-        <a class="item">Sign up</a>
+        <% if logged_in? %>
+        <li class="item dropdown-links"><%= link_to "Log out", login_path, method: :delete %></li>
+        <% else %>
+        <li class="item dropdown-links"><%= link_to "Log in", login_path %></li>
+        <% end %>
       </div>
     </div>
+    <% unless logged_in? %>
     <div class="item">
         <div class="ui primary button">Sign Up</div>
     </div>
+    <% end %>
   </div>
 </div>

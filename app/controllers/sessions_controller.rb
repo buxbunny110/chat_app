@@ -14,9 +14,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to(root_path)
     else
-      flash[:error] = "Username or password is incorrect"
+      flash.now[:error] = "Username or password is incorrect"
       render 'login'
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to(root_path)
   end
 
   private 
