@@ -11,8 +11,8 @@
         <%= form_for(@message, url: chatroom_path, class: "ui reply form", remote: true) do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
-              <%= f.text_field :body, placeholder: "Enter a message" %>
-              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
+              <%= f.text_field :body, placeholder: "Enter a message", id: "chat-input" %>
+              <%= f.button '<i id="send-button" class="bordered inverted orange edit icon"></i>'.html_safe %>
             </div>
           </div>
         <% end %>

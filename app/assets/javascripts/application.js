@@ -17,6 +17,22 @@
 //= require semantic-ui
 //= require_tree .
 
+var scrollBottom = () => {
+  $('#messages').scrollTop($('#messages')[0].scrollHeight)
+}
+
+var resetInput = () => {
+  $('#chat-input').val('');
+}
+
+var handleEnterPress = () => {
+  let sendButton = $('#send-button');
+  document.addEventListener('keypress', e => {
+    if (e.key = 'Enter') sendButton.click();
+  });
+}
+
 $(document).on('turbolinks:load', () => {
   $('.ui.dropdown').dropdown();
+  scrollBottom();
 });

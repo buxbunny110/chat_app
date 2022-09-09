@@ -7,3 +7,5 @@ App.chat_room = App.cable.subscriptions.create "ChatRoomChannel",
 
   received: (data) ->
     $('#message-container').append data.body
+    scrollBottom()
+    resetInput()
