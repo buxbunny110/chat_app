@@ -13,6 +13,11 @@ class ChatroomController < ApplicationController
     end
   end
 
+  def friends 
+    @friends = User.all
+    render 'friends'
+  end
+
   private 
 
   def chatroom_params 

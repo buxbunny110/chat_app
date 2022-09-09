@@ -1,5 +1,5 @@
 <%= render 'shared/header', content: 'Message me'  %>
-<div class="ui two column grid">
+<div class="ui two column grid stackable">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
       <div class="content" id="messages">
@@ -20,20 +20,6 @@
     </div>
   </div>
   <div class="four wide column">
-    <div class="ui fluid raised card chatbox">
-      <div class="content">
-        <div class="ui inverted vertical menu">
-          <a class="active item">
-            Home
-          </a>
-          <a class="item">
-            Messages
-          </a>
-          <a class="item">
-            Friends
-          </a>
-        </div>
-      </div>
-    </div>
+    <%= render 'sidebar' %>
   </div>
 </div>
